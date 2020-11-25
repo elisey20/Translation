@@ -15,11 +15,13 @@ int main()
 	
 	//А - п .. р - ё
 
+	
+
 	cout << 'А' << "\t" << (unsigned char)'А' << endl;
 
 	/*while (flag) {
 		if (str[i] > )
-	}*/
+	}*/ 
 
 	return 0;
 
