@@ -20,10 +20,16 @@ int main()
 
 
 	while (flag) {
-		if ((str[i] >= -64 && str[i] <= -1) || str[i] == -88 || str[i] == -72)
-
+		if ((str[i] >= -64 && str[i] <= -1) || str[i] == -88 || str[i] == -72) {
+			char j = 0;
+			while (j < 64) {
+				if (rus[j] == str[i])
+					cout << eng[j];
+			}
+		}
 		else
 			cout << str[i];
+		i++;
 	} 
 
 	return 0;
