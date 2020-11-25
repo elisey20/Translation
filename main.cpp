@@ -49,6 +49,8 @@ int main()
 			flag = false;
 	} 
 
+	delete[] str;
+
 	return 0;
 
 }
