@@ -45,12 +45,12 @@ int main()
 		i++;
 
 		//проверка на конец строки
-		if (str[i] == '\0')
+		if (str[i] == '\0' || i == 1000 )
 			flag = false;
 	} 
 
 	delete[] str;
 
 	return 0;
-
+	
 }
