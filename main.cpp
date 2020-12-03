@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <windows.h>
-#include "Structs.h"
+#include "src/Structs.h"
 
 using namespace std;
 
