@@ -11,9 +11,9 @@ void Translate()
     char* str = new char[1024];
 
     std::cin.getline(str, 1024);
-    std::cout << str[0] << str[1] << std::endl;
+
     //для выхода из цикла
-    bool flag = true;
+    bool flag = true;л
     //для текущего символа строки
     unsigned short i = 0;
 
