@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "methods.h"
+#include "Structs.h"
 
 using namespace std;
 

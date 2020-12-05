@@ -3018,7 +3018,7 @@ void TestSuite::Run() {
     }
   }
   elapsed_time_ = internal::GetTimeInMillis() - start_timestamp_;
-  
+
   impl->os_stack_trace_getter()->UponLeavingGTest();
   internal::HandleExceptionsInMethodIfSupported(
       this, &TestSuite::RunTearDownTestSuite, "TearDownTestSuite()");

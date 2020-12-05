@@ -15,7 +15,7 @@ add_subdirectory(googletest)
 include_directories(src)
 include_directories(googletest/googletest/include)
 
-set(SOURCE_FILES src/methods.cpp)
+set(SOURCE_FILES src/methods.cpp src/Structs.cpp)
 
 add_executable(main main.cpp ${SOURCE_FILES})
 add_executable(tests tests.cpp ${SOURCE_FILES})
