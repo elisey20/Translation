@@ -1,3 +1,4 @@
+#pragma once
 
 //Массив латинских букв
 const char* eng[] =
