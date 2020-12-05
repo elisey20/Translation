@@ -1,2 +1,2 @@
 
-void Translate();
+char* Translate(const char*);

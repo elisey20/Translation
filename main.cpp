@@ -1,13 +1,18 @@
 ﻿#include <iostream>
-#include <windows.h>
 #include "methods.h"
 
 using namespace std;
 
 int main()
 {
-	
-	Translate();
+
+    char* str = new char[1024];
+
+    cin.getline(str, 1024);
+
+	char* res = Translate(str);
+
+	cout << res;
 
     return 0;
 	

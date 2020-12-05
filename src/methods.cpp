@@ -3,51 +3,68 @@
 #include <iostream>
 #include "Structs.h"
 
+void addSymbols(char* res, unsigned short& iRes, const char* symbols, char maxi = 1)
+{
+    char i = 0;
+    while (symbols[i] != '\0' && i < maxi)
+    {
+        res[iRes++] = symbols[i++];
+    }
+}
 
-void Translate()
+char* Translate(const char* str)
 {
 
-    //входная строка
-    char* str = new char[1024];
-
-    std::cin.getline(str, 1024);
-
     //для выхода из цикла
-    bool flag = true;л
-    //для текущего символа строки
-    unsigned short i = 0;
+    bool flag = true;
+    //для текущего символа входной строки
+    unsigned short iInp = 0;
+    //для текущего символа выходной строки
+    unsigned short iRes = 0;
+    //Результат
+    char* res = new char[1024];
 
-    while (flag) {
+    while (flag)
+    {
 
         //проверка на символ кирилицы
-        if (str[i] == '\xD0' || str[i] == '\xD1') {
-            //поиск позиции русского символа в массиве для биективного отображения в массив латинских букв
+        if (str[iInp] == '\xD0' || str[iInp] == '\xD1')
+        {
+            //поиск позиции русского символа в массиве для биективного отображения в массив латинских символов
             char j = 0;
             bool isFind = false;
-            while (j < 64 && !isFind) {
-                if (rus[j][0] == str[i] && rus[j][1] == str[i+1]) {
-                    std::cout << eng[j];
+            while (j < 66 && !isFind)
+            {
+                // Если нашли совпадение в строке и массиве русских символов до добавляем в выходную строку
+                // соответствующие латинские символы
+                if (rus[j][0] == str[iInp] && rus[j][1] == str[iInp + 1])
+                {
+                    addSymbols(res, iRes, eng[j], 4);
                     isFind = true;
                 }
                 j++;
             }
             if (!isFind)
-                std::cout << str[i] << str[i+1];
+            {
+                addSymbols(res, iRes, &str[iInp], 2);
+            }
             //следующая позиция символа строки
-            i += 2;
+            iInp += 2;
         }
         //если символ не кирилицы, то просто выводим символ
-        else {
-            std::cout << str[i];
-            //следующая позиция символа строки
-            i++;
+        else
+        {
+            addSymbols(res, iRes, &str[iInp]);
+            iInp++;
         }
 
         //проверка на конец строки
-        if (str[i] == '\0' || i == 1024)
+        if (str[iInp] == '\0' || iInp >= 1024)
             flag = false;
     }
 
-    delete[] str;
+    res[iRes] = '\0';
+
+    return res;
 
 }
